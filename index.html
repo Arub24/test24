@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>Lunara</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #2e2a4f, #1e2f5c);
+      color: #fff;
+    }
+
+    /* الهيدر بنقاط النجوم */
+    #header {
+      background: radial-gradient(#ffffff88 1px, transparent 1px),
+                  radial-gradient(#ffffff55 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+      padding: 30px 0;
+      text-align: center;
+      position: relative;
+    }
+
+    #header h1 {
+      font-size: 30px;
+      margin: 0;
+      color: #ffffff;
+      display: inline-block;
+    }
+
+    #header .moon {
+      font-size: 30px;
+      margin-left: 10px;
+      vertical-align: middle;
+    }
+
+    .container {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .product {
+      display: inline-block;
+      width: 200px;
+      margin: 20px;
+      background-color: #fff;
+      color: #333;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
+    }
+
+    .product img {
+      width: 100%;
+      height: auto;
+    }
+
+    .product h3 {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+
+    .product p {
+      color: #666;
+    }
+
+    #footer {
+      padding: 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <div id="header">
+    <span class="moon">🌙</span>
+    <h1>Lunara</h1>
+  </div>
+
+  <!-- محتوى المتجر -->
+  <div class="container">
+    <h2>مرحباً بكِ في متجر Lunara – لمسة من ضوء القمر 💫</h2>
+
+    <div class="product">
+      <img src="images/lipstick.jpg" alt="روج">
+      <h3>روج أحمر كلاسيك</h3>
+      <p>25 ريال</p>
+    </div>
+
+    <div class="product">
+      <img src="images/foundation.jpg" alt="فاونديشن">
+      <h3>فاونديشن مطفي</h3>
+      <p>45 ريال</p>
+    </div>
+
+    <!-- أضف المزيد من المنتجات حسب الحاجة -->
+  </div>
+
+  <!-- الفوتر -->
+  <div id="footer">
+    © 2025 Lunara – جميع الحقوق محفوظة
+  </div>
+
+</body>
+</html>
