@@ -1,9 +1,103 @@
-<header style="background-color: #ffccd5; padding: 15px; text-align: center;">
-  <h2>متجر الميك أب العصري</h2>
+<style>
+  header {
+    background-color: #e9d9f7;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #5d3c9c;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: #5d3c9c;
+    cursor: pointer;
+  }
+
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #5d3c9c;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    padding: 30px 20px;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .mobile-menu a {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #5d3c9c;
+    text-decoration: none;
+  }
+
+  .close-btn {
+    font-size: 24px;
+    align-self: flex-end;
+    cursor: pointer;
+    color: #5d3c9c;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      display: none;
+    }
+
+    .menu-toggle {
+      display: block;
+    }
+  }
+</style>
+
+<header>
+  <div class="logo">Lunara 🌙</div>
+  <button class="menu-toggle" onclick="openMenu()">☰</button>
   <nav>
-    <a href="#">الرئيسية</a> |
-    <a href="#">المنتجات</a> |
-    <a href="#">اتصل بنا</a>
+    <a href="#home">الرئيسية</a>
+    <a href="#products">المنتجات</a>
+    <a href="#about">من نحن</a>
+    <a href="#contact">تواصل معنا</a>
+    <a href="#login">تسجيل دخول</a>
   </nav>
 </header>
 
+<div class="mobile-menu" id="mobileMenu">
+  <span class="close-btn" onclick="closeMenu()">✖</span>
+  <a href="#home">الرئيسية</a>
+  <a href="#products">المنتجات</a>
+  <a href="#about">من نحن</a>
+  <a href="#contact">تواصل معنا</a>
+  <a href="#login">تسجيل دخول</a>
+</div>

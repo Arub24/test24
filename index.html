@@ -6,51 +6,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to bottom, #2e2a4f, #1e2f5c);
-      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      background-color: #ffffff;
+      color: #222;
+      scroll-behavior: smooth;
     }
 
-    /* الهيدر بنقاط النجوم */
-    #header {
-      background: radial-gradient(#ffffff88 1px, transparent 1px),
-                  radial-gradient(#ffffff55 1px, transparent 1px);
-      background-size: 40px 40px;
-      background-position: 0 0, 20px 20px;
-      padding: 30px 0;
+    .hero {
       text-align: center;
-      position: relative;
+      padding: 60px 20px;
+      background-color: #f9f4fc;
     }
 
-    #header h1 {
-      font-size: 30px;
-      margin: 0;
-      color: #ffffff;
-      display: inline-block;
+    .hero img {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
     }
 
-    #header .moon {
-      font-size: 30px;
-      margin-left: 10px;
-      vertical-align: middle;
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #4b2d79;
     }
 
-    .container {
-      padding: 20px;
-      text-align: center;
+    .hero p {
+      font-size: 18px;
+      color: #7b5ea7;
+    }
+
+    .promo-video {
+      display: flex;
+      justify-content: center;
+      padding: 30px 20px;
+      background-color: #fff0fa;
+    }
+
+    .promo-video video {
+      width: 90%;
+      max-width: 800px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      padding: 40px 20px;
     }
 
     .product {
-      display: inline-block;
-      width: 200px;
-      margin: 20px;
-      background-color: #fff;
-      color: #333;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
-      overflow: hidden;
+      background-color: #f3e7ff;
+      padding: 15px;
+      border-radius: 15px;
+      width: 220px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
     }
 
@@ -61,56 +75,156 @@
     .product img {
       width: 100%;
       height: auto;
+      border-radius: 10px;
     }
 
     .product h3 {
-      font-size: 18px;
-      margin: 10px 0;
+      margin: 10px 0 5px;
     }
 
     .product p {
-      color: #666;
+      color: #555;
     }
 
-    #footer {
-      padding: 20px;
+    .about {
+      background-color: #f9f4fc;
       text-align: center;
-      color: #ccc;
-      font-size: 14px;
+      padding: 40px 20px;
+    }
+
+    .about h2 {
+      color: #5d3c9c;
+    }
+
+    section {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease-out;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
 <body>
 
   <!-- الهيدر -->
-  <div id="header">
-    <span class="moon">🌙</span>
-    <h1>Lunara</h1>
-  </div>
+  <div id="header-placeholder"></div>
 
-  <!-- محتوى المتجر -->
-  <div class="container">
-    <h2>مرحباً بكِ في متجر Lunara – لمسة من ضوء القمر 💫</h2>
+  <!-- ترحيب -->
+  <section id="home" class="hero">
+    <img src="لوقو2.png" alt="شعار Lunara">
+    <h2>🌙 لمسة من ضوء القمر Lunara مرحبًا بك في</h2>
+    <p>✨ جمالك يبدأ من هنا</p>
+  </section>
 
+  <!-- فيديو دعائي -->
+  <section class="promo-video">
+    <video src="فيديووو.mp4" autoplay muted loop playsinline></video>
+  </section>
+
+  <!-- المنتجات -->
+  <section id="products" class="products">
     <div class="product">
-      <img src="images/lipstick.jpg" alt="روج">
+      <img src="https://i.ibb.co/0jYc7t1/lipstick.png" alt="روج">
       <h3>روج أحمر كلاسيك</h3>
       <p>25 ريال</p>
     </div>
-
     <div class="product">
-      <img src="images/foundation.jpg" alt="فاونديشن">
+      <img src="https://i.ibb.co/4FfS7q8/foundation.png" alt="فاونديشن">
       <h3>فاونديشن مطفي</h3>
       <p>45 ريال</p>
     </div>
+    <div class="product">
+      <img src="https://i.ibb.co/Kx6g2b6/mascara.png" alt="ماسكارا">
+      <h3>ماسكارا مضاعفة</h3>
+      <p>35 ريال</p>
+    </div>
+    <div class="product">
+      <img src="https://i.ibb.co/1q7t9r4/eyeshadow.png" alt="ظلال عيون">
+      <h3>ظلال عيون لامعة</h3>
+      <p>55 ريال</p>
+    </div>
+    <div class="product">
+      <img src="https://i.ibb.co/6JkKq2d/serum.png" alt="سيروم">
+      <h3>سيروم مغذي</h3>
+      <p>60 ريال</p>
+    </div>
+    <div class="product">
+      <img src="https://i.ibb.co/QrNjP4Z/blush.png" alt="أحمر خدود">
+      <h3>أحمر خدود وردي</h3>
+      <p>30 ريال</p>
+    </div>
+  </section>
 
-    <!-- أضف المزيد من المنتجات حسب الحاجة -->
-  </div>
+  <!-- من نحن -->
+  <section id="about" class="about">
+    <h2>من نحن</h2>
+    <p>Lunara هو متجر مستحضرات تجميل يعكس الجمال والهدوء كما في ضوء القمر 💜</p>
+  </section>
 
   <!-- الفوتر -->
-  <div id="footer">
-    © 2025 Lunara – جميع الحقوق محفوظة
-  </div>
+  <div id="footer-placeholder"></div>
+
+  <!-- سكربتات -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("header.html")
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("header-placeholder").innerHTML = data;
+
+          // تفعيل القائمة المنسدلة بعد تحميل الهيدر
+          let menuVisible = false;
+
+          window.openMenu = function () {
+            const menu = document.getElementById("mobileMenu");
+            if (!menuVisible) {
+              menu.style.display = "flex";
+              menuVisible = true;
+            } else {
+              menu.style.display = "none";
+              menuVisible = false;
+            }
+          }
+
+          window.closeMenu = function () {
+            const menu = document.getElementById("mobileMenu");
+            menu.style.display = "none";
+            menuVisible = false;
+          }
+
+          // إذا كبرنا الشاشة نخفي القائمة
+          window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+              const menu = document.getElementById("mobileMenu");
+              if (menu) {
+                menu.style.display = "none";
+                menuVisible = false;
+              }
+            }
+          });
+        });
+
+      // تحميل الفوتر
+      fetch("footer.html")
+        .then(res => res.text())
+        .then(data => document.getElementById("footer-placeholder").innerHTML = data);
+
+      // تأثير السكروول
+      const sections = document.querySelectorAll("section");
+      window.addEventListener("scroll", () => {
+        sections.forEach(sec => {
+          const top = sec.getBoundingClientRect().top;
+          if (top < window.innerHeight - 100) {
+            sec.classList.add("visible");
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 </html>
